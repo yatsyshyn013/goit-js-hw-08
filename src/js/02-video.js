@@ -9,7 +9,19 @@ const setTime = throttle(function(evt) {
         localStorage.setItem(KEY, evt.seconds);
 }, 1000);
 
+pageReload();
+
 player.on('timeupdate', setTime);
 
-player.setCurrentTime(localStorage.getItem(KEY));
+// const serializedState = localStorage.getItem(KEY);
+// console.log(serializedState);
+
+function pageReload() {
+      
+if (localStorage.getItem(KEY) !== null) {
+        player.setCurrentTime(localStorage.getItem(KEY));
+        }
+}
+
+// player.setCurrentTime(localStorage.getItem(KEY));
 

@@ -17,10 +17,11 @@ player.on('timeupdate', setTime);
 // console.log(serializedState);
 
 function pageReload() {
-      
-if (localStorage.getItem(KEY) !== null) {
+
+const reloadStorage = localStorage.getItem(KEY);
+if (reloadStorage) {
         player.setCurrentTime(localStorage.getItem(KEY));
-        }
+}
 }
 
 // player.setCurrentTime(localStorage.getItem(KEY));
